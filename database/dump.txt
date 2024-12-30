@@ -1,0 +1,295 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: by6d5vvr3z9njhultbp2-mysql.services.clever-cloud.com:3306
+-- Generation Time: Jan 28, 2023 at 08:02 PM
+-- Server version: 8.0.22-13
+-- PHP Version: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `by6d5vvr3z9njhultbp2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Appointments`
+--
+
+CREATE TABLE `Appointments` (
+  `aid` int NOT NULL,
+  `pid` int DEFAULT NULL,
+  `psid` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Appointments`
+--
+
+INSERT INTO `Appointments` (`aid`, `pid`, `psid`) VALUES
+(1, 45, 6),
+(2, 8, 20),
+(3, 38, 8),
+(4, 41, 2),
+(5, 12, 19),
+(6, 50, 19),
+(7, 1, 4),
+(8, 7, 4),
+(9, 43, 6),
+(10, 14, 2),
+(11, 3, 16),
+(12, 5, 15),
+(13, 22, 5),
+(14, 5, 20),
+(15, 14, 15),
+(16, 13, 11),
+(17, 4, 9),
+(18, 8, 10),
+(19, 42, 10),
+(20, 20, 5),
+(21, 49, 2),
+(22, 42, 18),
+(23, 9, 16),
+(24, 40, 13),
+(25, 9, 7),
+(26, 13, 7),
+(27, 30, 9),
+(28, 22, 18),
+(29, 29, 6),
+(30, 47, 12),
+(31, 25, 18),
+(32, 6, 14),
+(33, 26, 6),
+(34, 8, 7),
+(35, 3, 19),
+(36, 37, 10),
+(37, 36, 17),
+(38, 43, 11),
+(39, 31, 10),
+(40, 49, 7),
+(41, 7, 14),
+(42, 31, 15),
+(43, 36, 7),
+(44, 24, 1),
+(45, 7, 13),
+(46, 38, 12),
+(47, 42, 14),
+(48, 29, 9),
+(49, 45, 5),
+(50, 40, 14),
+(66, 54, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Hospitals`
+--
+
+CREATE TABLE `Hospitals` (
+  `hid` int NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Hospitals`
+--
+
+INSERT INTO `Hospitals` (`hid`, `name`) VALUES
+(1, 'Apollo Hospitals'),
+(2, 'Jawaharlal Nehru Medical College and Hospital'),
+(3, 'Indira Gandhi Institute of Medical Sciences (IGIMS)'),
+(4, 'AIIMS - All India Institute Of Medical Science');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Patients`
+--
+
+CREATE TABLE `Patients` (
+  `pid` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Patients`
+--
+
+INSERT INTO `Patients` (`pid`, `name`, `address`, `email`, `phone`, `password`, `photo`) VALUES
+(1, 'Patient 1', 'Address1', 'patient1@example.com', '555-555-5555', 'password1', 'photourl1'),
+(2, 'Patient 2', 'Address2', 'patient2@example.com', '555-555-5555', 'password2', 'photourl2'),
+(3, 'Patient 3', 'Address3', 'patient3@example.com', '555-555-5555', 'password3', 'photourl3'),
+(4, 'Patient 4', 'Address4', 'patient4@example.com', '555-555-5555', 'password4', 'photourl4'),
+(5, 'Patient 5', 'Address5', 'patient5@example.com', '555-555-5555', 'password5', 'photourl5'),
+(6, 'Patient 6', 'Address6', 'patient6@example.com', '555-555-5555', 'password6', 'photourl6'),
+(7, 'Patient 7', 'Address7', 'patient7@example.com', '555-555-5555', 'password7', 'photourl7'),
+(8, 'Patient 8', 'Address8', 'patient8@example.com', '555-555-5555', 'password8', 'photourl8'),
+(9, 'Patient 9', 'Address9', 'patient9@example.com', '555-555-5555', 'password9', 'photourl9'),
+(10, 'Patient 10', 'Address10', 'patient10@example.com', '555-555-5555', 'password10', 'photourl10'),
+(11, 'Patient 11', 'Address11', 'patient11@example.com', '555-555-5555', 'password11', 'photourl11'),
+(12, 'Patient 12', 'Address12', 'patient12@example.com', '555-555-5555', 'password12', 'photourl12'),
+(13, 'Patient 13', 'Address13', 'patient13@example.com', '555-555-5555', 'password13', 'photourl13'),
+(14, 'Patient 14', 'Address14', 'patient14@example.com', '555-555-5555', 'password14', 'photourl14'),
+(15, 'Patient 15', 'Address15', 'patient15@example.com', '555-555-5555', 'password15', 'photourl15'),
+(16, 'Patient 16', 'Address16', 'patient16@example.com', '555-555-5555', 'password16', 'photourl16'),
+(17, 'Patient 17', 'Address17', 'patient17@example.com', '555-555-5555', 'password17', 'photourl17'),
+(18, 'Patient 18', 'Address18', 'patient18@example.com', '555-555-5555', 'password18', 'photourl18'),
+(19, 'Patient 19', 'Address19', 'patient19@example.com', '555-555-5555', 'password19', 'photourl19'),
+(20, 'Patient 20', 'Address20', 'patient20@example.com', '555-555-5555', 'password20', 'photourl20'),
+(21, 'Patient 21', 'Address21', 'patient21@example.com', '555-555-5555', 'password21', 'photourl21'),
+(22, 'Patient 22', 'Address22', 'patient22@example.com', '555-555-5555', 'password22', 'photourl22'),
+(23, 'Patient 23', 'Address23', 'patient23@example.com', '555-555-5555', 'password23', 'photourl23'),
+(24, 'Patient 24', 'Address24', 'patient24@example.com', '555-555-5555', 'password24', 'photourl24'),
+(25, 'Patient 25', 'Address25', 'patient25@example.com', '555-555-5555', 'password25', 'photourl25'),
+(26, 'Patient 26', 'Address26', 'patient26@example.com', '555-555-5555', 'password26', 'photourl26'),
+(27, 'Patient 27', 'Address27', 'patient27@example.com', '555-555-5555', 'password27', 'photourl27'),
+(28, 'Patient 28', 'Address28', 'patient28@example.com', '555-555-5555', 'password28', 'photourl28'),
+(29, 'Patient 29', 'Address29', 'patient29@example.com', '555-555-5555', 'password29', 'photourl29'),
+(30, 'Patient 30', 'Address30', 'patient30@example.com', '555-555-5555', 'password30', 'photourl30'),
+(31, 'Patient 31', 'Address31', 'patient31@example.com', '555-555-5555', 'password31', 'photourl31'),
+(32, 'Patient 32', 'Address32', 'patient32@example.com', '555-555-5555', 'password32', 'photourl32'),
+(33, 'Patient 33', 'Address33', 'patient33@example.com', '555-555-5555', 'password33', 'photourl33'),
+(34, 'Patient 34', 'Address34', 'patient34@example.com', '555-555-5555', 'password34', 'photourl34'),
+(35, 'Patient 35', 'Address35', 'patient35@example.com', '555-555-5555', 'password35', 'photourl35'),
+(36, 'Patient 36', 'Address36', 'patient36@example.com', '555-555-5555', 'password36', 'photourl36'),
+(37, 'Patient 37', 'Address37', 'patient37@example.com', '555-555-5555', 'password37', 'photourl37'),
+(38, 'Patient 38', 'Address38', 'patient38@example.com', '555-555-5555', 'password38', 'photourl38'),
+(39, 'Patient 39', 'Address39', 'patient39@example.com', '555-555-5555', 'password39', 'photourl39'),
+(40, 'Patient 40', 'Address40', 'patient40@example.com', '555-555-5555', 'password40', 'photourl40'),
+(41, 'Patient 41', 'Address41', 'patient41@example.com', '555-555-5555', 'password41', 'photourl41'),
+(42, 'Patient 42', 'Address42', 'patient42@example.com', '555-555-5555', 'password42', 'photourl42'),
+(43, 'Patient 43', 'Address43', 'patient43@example.com', '555-555-5555', 'password43', 'photourl43'),
+(44, 'Patient 44', 'Address44', 'patient44@example.com', '555-555-5555', 'password44', 'photourl44'),
+(45, 'Patient 45', 'Address45', 'patient45@example.com', '555-555-5555', 'password45', 'photourl45'),
+(46, 'Patient 46', 'Address46', 'patient46@example.com', '555-555-5555', 'password46', 'photourl46'),
+(47, 'Patient 47', 'Address47', 'patient47@example.com', '555-555-5555', 'password47', 'photourl47'),
+(48, 'Patient 48', 'Address48', 'patient48@example.com', '555-555-5555', 'password48', 'photourl48'),
+(49, 'Patient 49', 'Address49', 'patient49@example.com', '555-555-5555', 'password49', 'photourl49'),
+(50, 'Patient 50', 'Address50', 'patient50@example.com', '555-555-5555', 'password50', 'photourl50'),
+(54, 'P', 'addygoinyg', 'email@g.com', '+919390477549', 'Ps1874r470', 'http://photo.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Psychiatrists`
+--
+
+CREATE TABLE `Psychiatrists` (
+  `psid` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `hid` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Psychiatrists`
+--
+
+INSERT INTO `Psychiatrists` (`psid`, `name`, `hid`) VALUES
+(1, 'Psychiatrist 14', 2),
+(2, 'Psychiatrist 8', 3),
+(3, 'Psychiatrist 18', 2),
+(4, 'Psychiatrist 16', 4),
+(5, 'Psychiatrist 13', 4),
+(6, 'Psychiatrist 2', 2),
+(7, 'Psychiatrist 1', 3),
+(8, 'Psychiatrist 19', 4),
+(9, 'Psychiatrist 9', 4),
+(10, 'Psychiatrist 11', 1),
+(11, 'Psychiatrist 5', 2),
+(12, 'Psychiatrist 6', 2),
+(13, 'Psychiatrist 17', 3),
+(14, 'Psychiatrist 7', 1),
+(15, 'Psychiatrist 4', 1),
+(16, 'Psychiatrist 10', 3),
+(17, 'Psychiatrist 15', 4),
+(18, 'Psychiatrist 12', 3),
+(19, 'Psychiatrist 20', 1),
+(20, 'Psychiatrist 3', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Appointments`
+--
+ALTER TABLE `Appointments`
+  ADD PRIMARY KEY (`aid`),
+  ADD KEY `pid` (`pid`),
+  ADD KEY `psid` (`psid`);
+
+--
+-- Indexes for table `Hospitals`
+--
+ALTER TABLE `Hospitals`
+  ADD PRIMARY KEY (`hid`);
+
+--
+-- Indexes for table `Patients`
+--
+ALTER TABLE `Patients`
+  ADD PRIMARY KEY (`pid`);
+
+--
+-- Indexes for table `Psychiatrists`
+--
+ALTER TABLE `Psychiatrists`
+  ADD PRIMARY KEY (`psid`),
+  ADD KEY `hid` (`hid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Appointments`
+--
+ALTER TABLE `Appointments`
+  MODIFY `aid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- AUTO_INCREMENT for table `Hospitals`
+--
+ALTER TABLE `Hospitals`
+  MODIFY `hid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `Patients`
+--
+ALTER TABLE `Patients`
+  MODIFY `pid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `Psychiatrists`
+--
+ALTER TABLE `Psychiatrists`
+  MODIFY `psid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Appointments`
+--
+ALTER TABLE `Appointments`
+  ADD CONSTRAINT `Appointments_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `Patients` (`pid`),
+  ADD CONSTRAINT `Appointments_ibfk_2` FOREIGN KEY (`psid`) REFERENCES `Psychiatrists` (`psid`);
+
+--
+-- Constraints for table `Psychiatrists`
+--
+ALTER TABLE `Psychiatrists`
+  ADD CONSTRAINT `Psychiatrists_ibfk_1` FOREIGN KEY (`hid`) REFERENCES `Hospitals` (`hid`);
+COMMIT;
